@@ -140,6 +140,29 @@ class UI {
      cartOverlay.classList.remove("transparentBcg");
      cartDOM.classList.remove("showCart");
   }
+  // cart functionality
+  cartLogic() {
+   // select clear cart button
+   clearCartBtn.addEventListener("click", () => {
+    this.clearCart();
+   })
+   // cart functionality
+  }
+  clearCart() {
+   let cartItems = cart.map(item => item.id)
+   cartItems.forEach(id => this.removeItem(id))
+  }
+  removeItem(id) {
+   cart = cart.filter(item => item.id !== id)
+   this.setCartValues(cart)
+   Storage.saveCart(cart)
+   let button = this.getSingleButton(id)
+   button.disabled = false
+   button.innerHTML = `<i class="fas fa-shopping-cart">add to bag</i>`;
+  }
+  getSingleButton(id) {
+   return buttonsDOM.find(button => button.dataset.id === id)
+  }
 }
 
 // lacal storage
@@ -176,5 +199,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .then(() => {
       ui.getBagButtons();
+      ui.cartLogic()
     });
 });
