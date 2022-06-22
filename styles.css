@@ -23,7 +23,7 @@ body {
 .navbar {
   position: sticky;
   top: 0;
- min-height: 60px;
+  min-height: 60px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -49,7 +49,7 @@ body {
 }
 
 .nav-link:hover {
-  color:  #f09d51 ;
+  color: #f09d51;
 }
 
 .nav-link:nth-child(2) {
@@ -85,7 +85,8 @@ body {
   margin: 5px auto;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-color: #000;
+  background-color: #f09d51;
+  
 }
 
 /* --------------- Hero ---------------- */
@@ -307,7 +308,7 @@ a {
 
   .hamburger {
     display: block;
-    z-index: 2
+    z-index: 2;
   }
 
   .hamburger.active .bar:nth-child(2) {
@@ -318,52 +319,59 @@ a {
     transform: translateY(8px) rotate(45deg);
   }
 
-   .hamburger.active .bar:nth-child(3) {
+  .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
 
   header {
-   position: relative;
+    position: relative;
   }
 
   .nav-menu {
-   position: fixed;
-   left: -100%;
-   top: 100px;
-   gap: 0;
-   flex-direction: column;
-   justify-content: flex-start;
-  background-image: linear-gradient(to right, rgb(55, 34, 34) , rgb(213, 188, 111));
-   opacity: 0.8;
-   width: 100vw;
-   min-height: 100vh;
-   text-align: center;
-   transition: 0.3s;
-   z-index:1;
+    position: absolute;
+    overflow: hidden;
+    left: -100%;
+    top: 0;
+    gap: 0;
+    flex-direction: column;
+    justify-content: center;
+    background-image: linear-gradient(
+      to right,
+      rgb(10, 8, 8),
+      rgb(255, 242, 202)
+    );
+    width: 100vw;
+    min-height: 100vh;
+    text-align: center;
+    transition: 0.3s;
+    z-index: 1;
   }
 
   .nav-item {
-   margin: 16px 0;
+    margin: 5px 0;
   }
 
   .nav-link {
-    color: #fff;
+    color: #f09d51;
     font-size: 20px;
+    opacity: 0.5;
   }
 
   .nav-link:hover {
-  color: rgb(55, 34, 34) ;
-}
+    color: rgb(55, 34, 34);
+  }
 
   .nav-menu.active {
-   left: 0;
+    left: 0;
   }
 
   .navbar {
-   padding: 0 20px;
+    padding: 0 20px;
   }
 
   .banner {
-   padding: 3rem;
+    padding: 3rem;
   }
+
+
 }
